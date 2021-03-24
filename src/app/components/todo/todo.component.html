@@ -1,0 +1,32 @@
+
+    <div [style.background] = "getColor()" class="alert">
+
+   <div class="d-flex flex-row justify-content-between">
+    <div>
+
+      <div>
+        {{tarea.mensaje}}
+      </div>
+
+      <div *ngIf="tarea.completada">
+        {{tarea.fecha}}
+      </div>
+    </div>
+
+    <button
+      class='btn float-right'
+
+      [ngClass]="{
+        'btn-success': tarea.completada,
+        'btn-primary': !tarea.completada
+      }"
+
+      [disabled]="tarea.completada"
+
+      (click)="completar()">
+        {{tarea.completada ? "Completada" : "Completar"}}
+    </button>
+  </div>
+ </div>
+
+

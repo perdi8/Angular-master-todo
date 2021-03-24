@@ -1,0 +1,58 @@
+<div>
+  <h2>
+    Mi Lista de Tareas
+  </h2>
+</div>
+
+<div>
+
+  <div class="mt-2 mb-2">
+    <h4>
+      Formulario
+    </h4>
+  </div>
+
+  <div class="input-group">
+
+    <label for="mensaje">Mensaje:</label>
+    <input class="form-control" name="mensaje" type="text" [(ngModel)]="mensaje" />
+
+    <label for="fecha"></label>
+    <input class="form-control" name="fecha" type="date" [(ngModel)]="fecha" />
+
+    <label for="grado"></label>
+    <input class="form-control" name="grado" type="number" max="4" min="0" [(ngModel)]="gradoImportancia" />
+
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="crearTarea()">
+        Crear Tarea
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-2 mb-2">
+    <h4>
+      Tus tareas Pendientes
+    </h4>
+  </div>
+
+
+  <div class="list-group" >
+
+    <app-todo class='list-group-item' (eventEmitter)="lista($event)"
+      *ngFor="let tarea of tareasCompletadas" [tarea]="tarea"
+
+      ></app-todo>
+  </div>
+
+  <div class="mt-2 mb-2">
+    <h4>
+      Tus tareas Completadas
+    </h4>
+  </div>
+
+  <div class="list-group">
+    <app-todo class='list-group-item'
+      *ngFor="let tarea of tareasIncompletas" [tarea]="tarea"></app-todo>
+  </div>
+</div>
