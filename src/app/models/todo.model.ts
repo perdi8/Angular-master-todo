@@ -1,4 +1,4 @@
-import { Output } from '@angular/core';
+
 import { ITodo } from './itodo.interface';
 
 export class Todo implements ITodo {

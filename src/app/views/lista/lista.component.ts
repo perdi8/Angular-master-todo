@@ -23,7 +23,8 @@ export class ListaComponent implements OnInit {
 
   lista($event) {
     this.tareasIncompletas.push($event)
-    this.tareasCompletadas.splice(0)
+    this.tareasCompletadas.splice(0,1)
+    // console.log(this.tareasCompletadas[0])
   }
 
   crearTarea(): void {
